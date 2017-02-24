@@ -1,6 +1,8 @@
 <table border=1 cellpadding=10><tr>
 <?php
 
+// Таблица умножения
+
 	for ($y=1; $y<=10; $y++)
 		echo "<td>$y</td>";
 
