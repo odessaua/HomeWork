@@ -3,8 +3,9 @@
 $array = [];
 for ($i=0; $i<=10; $i++)
 		$array[$i] = rand(1,50); 
-var_dump($array);
-$min = 0;
+echo "<pre>";
+print_r($array);
+/* $min = 0;
 $max = 0;
 $count = count ($array);
 // поиск максимального и минимального значения
@@ -18,4 +19,16 @@ echo "Максимальное значение - $array[$max]. Минималь
 $array[$min] += $array[$max];
 $array[$max] = $array[$min] - $array[$max];
 $array[$min] = $array[$min] - $array[$max];
-var_dump($array);
+var_dump($array); */
+
+echo "<hr>";
+
+$max = max($array);
+$min = min($array);
+$key_max = array_search($max, $array);
+$key_min = array_search($min, $array);
+
+list($array[$key_max], $array[$key_min]) = [$min, $max];
+echo "<b>Массив после замены элементов</b>";
+echo "<pre>";
+print_r($array);
