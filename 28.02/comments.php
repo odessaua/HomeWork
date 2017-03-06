@@ -83,7 +83,7 @@ else {
 	<?php
 	}
 	if (file_exists($file)) {
-		$text = file($file);
+		$text = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 		foreach ($text as $value) {
 			$data = explode('|',$value);
 			$data[2] = strip_tags ($data[2]);
