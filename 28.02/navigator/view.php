@@ -16,11 +16,9 @@
 
 if (isset($_GET['view'])) $view = $_GET['view'];
 if (isset($_GET['dir'])) $dir = $_GET['dir'];
-if (isset($_GET['del'])) $del = $_GET['del'];
 
-echo "Del = $del";
 
-if (!empty($_POST)){
+if (!empty($_POST)){               // Если файл редактировался, то вносим изменения
 	
 		$editfile = $_POST['editfile'];
 		$fp = fopen($dir.$view , 'w');
@@ -30,7 +28,7 @@ if (!empty($_POST)){
 }
 else {
 
-$editfile = file_get_contents($dir.$view);	
+$editfile = file_get_contents($dir.$view);	// считываем содержимое файла
 	
 }
 
@@ -47,7 +45,7 @@ $editfile = file_get_contents($dir.$view);
 <div class="clearfix"></div>  
  <div class="col-xs-4">
 <form action="navigate.php" method="POST" name="back">
-   <p><input type="submit" value=" Вернуться назад " name="back"></p>
+   <p><input type="submit" value=" Вернуться назад " name="back"></p> 
   </form>  
 
 	</div>

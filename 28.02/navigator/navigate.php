@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Файл Навигатор</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <table class="table table-striped table-bordered table-hover table-condensed" cellspacing="0" width="100%"><th>Имя</th><th>Тип</th><th>Размер</th><th>Создан</th><th>Последнее изменение</th><th>Просмотрен</th><th>Операции</th>
 <?php
 
-$url = $_SERVER['QUERY_STRING'];
+$url = $_SERVER['QUERY_STRING'];  //  инф для удаления файла
 
 $dir = "./";
 if (isset($_GET['sec'])) $sec = $_GET['sec'];
@@ -20,7 +20,7 @@ else  $dir = "./";
 if (isset($_GET['url'])) $url = $_GET['url'];
 if (isset($_GET['del'])) $del = $_GET['del'];
 
-	if ($del == 1) 	unlink($url);
+	if ($del == 1) 	unlink($url);   // удаление файла
 
 function GetFiles ($dir) {
 
