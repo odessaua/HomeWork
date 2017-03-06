@@ -3,7 +3,10 @@ $header = "Content-type: text/plain; charset=utf-8\r\n";
 $header .= "From: ";
 $file = 'comments.txt';
 $message = [];
-
+error_reporting(-1);
+$name = "";
+$email = "";
+$comment = "";
 if (!empty($_POST))
 	{
 		$errors =[];
@@ -82,7 +85,8 @@ else {
 	
 	<?php
 	}
-	if (file_exists($file)) {
+
+	if (file_exists($file) and filesize($file)>5) {
 		$text = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 		foreach ($text as $value) {
 			$data = explode('|',$value);
